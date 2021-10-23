@@ -1,0 +1,56 @@
+﻿I'm sorry, but an uncaught exception occurred.
+
+After initialization, but before game start.
+  File "game/screens.rpy", line 546, in prepare_screen
+    screen about():
+  File "game/screens.rpy", line 546, in prepare
+    screen about():
+  File "game/screens.rpy", line 553, in prepare
+    use game_menu(_("About"), scroll="viewport"):
+  File "game/screens.rpy", line 553, in prepare
+    use game_menu(_("About"), scroll="viewport"):
+  File "game/screens.rpy", line 557, in prepare
+    vbox:
+  File "game/screens.rpy", line 557, in prepare
+    vbox:
+  File "game/screens.rpy", line 566, in prepare
+    text _("The backgrounds are by {a=https://florassence.itch.io/garden-backgrounds}Florassence{/a}, distributed under a Creative Commons licence.
+SyntaxError: EOL while scanning string literal (screens.rpy, line 566)
+
+-- Full Traceback ------------------------------------------------------------
+
+Full traceback:
+  File "/home/noora/Lataukset/renpy-7.4.8-sdk/renpy/bootstrap.py", line 326, in bootstrap
+    renpy.main.main()
+  File "/home/noora/Lataukset/renpy-7.4.8-sdk/renpy/main.py", line 617, in main
+    run(restart)
+  File "/home/noora/Lataukset/renpy-7.4.8-sdk/renpy/main.py", line 97, in run
+    renpy.display.screen.prepare_screens()
+  File "/home/noora/Lataukset/renpy-7.4.8-sdk/renpy/display/screen.py", line 939, in prepare_screens
+    s.ast.prepare_screen()
+  File "game/screens.rpy", line 546, in prepare_screen
+    screen about():
+  File "game/screens.rpy", line 546, in prepare
+    screen about():
+  File "game/screens.rpy", line 553, in prepare
+    use game_menu(_("About"), scroll="viewport"):
+  File "game/screens.rpy", line 553, in prepare
+    use game_menu(_("About"), scroll="viewport"):
+  File "game/screens.rpy", line 557, in prepare
+    vbox:
+  File "game/screens.rpy", line 557, in prepare
+    vbox:
+  File "game/screens.rpy", line 566, in prepare
+    text _("The backgrounds are by {a=https://florassence.itch.io/garden-backgrounds}Florassence{/a}, distributed under a Creative Commons licence.
+  File "/home/noora/Lataukset/renpy-7.4.8-sdk/renpy/pyanalysis.py", line 712, in ast_eval
+    return self.ast_eval_literal(expr)[0]
+  File "/home/noora/Lataukset/renpy-7.4.8-sdk/renpy/pyanalysis.py", line 696, in ast_eval_literal
+    expr = py_compile(expr, 'eval', ast_node=True)
+  File "/home/noora/Lataukset/renpy-7.4.8-sdk/renpy/python.py", line 835, in py_compile
+    raise e
+SyntaxError: EOL while scanning string literal (screens.rpy, line 566)
+
+Linux-5.11.0-38-generic-x86_64-with-debian-bullseye-sid
+Ren'Py 7.4.8.1895
+GardenProject 1.0
+Sat Oct 23 22:08:26 2021
