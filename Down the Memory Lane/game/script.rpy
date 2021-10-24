@@ -6,6 +6,8 @@
 define n = Character("Sylvia")
 define y =  Character("You")
 
+default lied = False
+
 
 # The game starts here.
 
@@ -99,6 +101,7 @@ label housetrue:
     jump three
     
 label houselie:
+    $ lied = True
     
     show natsumi casual open
     
@@ -204,6 +207,7 @@ label outdoortruth:
     jump four
     
 label outdoorlie:
+    $ lied = True
     
     show natsumi casual frown
     
@@ -341,12 +345,163 @@ label five:
     
     n "Although, I've had friends and family keep the place in an order. Then Raymond retired and I asked if he wanted to move in here to have something to do with his time and he said yes."
     
-    y "So where is he now?"
+    y "Huh. I haven't seen him here, though. Is he not here?"
     
-    n "Visiting Peter and the others."
+    n "Not today. He's out visiting family."
 
+    n "He also figured that it'd be for the best to give us some privacy, especially since I haven't visited here for a while either."
+    
+    show natsumi casual closed frown
 
+    y "Is something wrong?"
+    
+    n "*sigh*"
+    
+    show natsumi casual frown
+    
+    n "I'm just frustrated. I'd hoped that you'd recover at least a little bit of your memories. We spent so much time here growing up."
+    
+    show natsumi casual closed frown
+    
+    n "Jake, you were my partner in your previous life. I loved you so, {i}so{/i} much. And you... you died in my arms."
+    
+    hide natsumi casual closed frown
+    
+    "Sylvia turns away from you. Her whole body trembles and you can hear her voice shake from the dammed tears."
+    
+    n "There was nothing I could do except smile for you since you asked me to and say whatever I needed to say before you were gone forever. And I... I'm not entirely sure about what happened after you... you were gone."
+    
+    n "What the others told... they said that I snapped in some way. And after it was all over, I got a PTSD diagnosis and sick time whatnot... And all I remember is that it hurt {i}so fucking much{/i}."
+    
+    n "I thought you were gone forever and acted that according to that. I moved away from our quarters because I couldn't stand being there alone and took over your old ones, the ones you never wanted to use."
+    
+    n "You know how I turned out. I don't know how I made it, aside from everyone's immense support and all the counseling."
+    
+    n "I never even thought of having another partner, not after everything we went through together. No one could ever measure up to you, you know?"
+    
+    n "And then you suddenly came back to life. You just... reappeared into our world, without a memory. But it was still you."
+    
+    y "I remember that. You almost crushed me with that bear hug."
+    
+    "Sylvia lets out a broken laugh. You are almost certain that she is either on the verge of tears or already crying."
+    
+    n "I was convinced that if I let go of you, you'd disappear again."
+    
+    n "And when you didn't..."
+    
+    n "It was the happiest day of my life."
+    
+    n "I'd gotten my partner back somehow. The love of my life, my other half, the one I'd missed more than anyone else ever. By the will of whatever higher powers, you'd returned to life."
+    
+    n "And I still am happy that you're with me again, don't get me wrong. But there's so much we experienced together that you don't remember and it... it hurts a lot, too."
+    
+    n "And... When you won't remember anything no matter how hard I try, it feels like I'm losing you all over again. It's not fair."
+    
+    "Sylvia turns to the sky."
+    
+    n "IT'S NOT FAIR, YOU HEAR?!"
+    
+    "Sylvia breaks into tears. You look for words that might appease her. You need to get her to calm down somehow."
+    
+    menu:
+        "Hey, calm down. It's not as bad as it looks. I'll remember stuff.":
+            jump sixbad
+        "I'm sorry that I don't remember anything. I can see that it's important to you.":
+            jump sixguilty
+        "I'm sure I will remember sooner or later. It's just going to take more time than either of us expected.":
+            jump sixgood
+            
+label sixbad:
+    if lied:
+        "Sylvia turns to you, tears streaming down her face."
+        
+        n "How can I believe that when you've already lied to me about remembering things?!"
+        
+        "You have no answer to that."
+        
+        "Sylvia wiped her tears away, still looking angry."
+        
+        n "I thought so."
+        
+        "She turns away."
+        
+        n "You're not the Jake I knew. You're a liar and I'm done."
+        
+        n "It's like The Broken View sang in {i}Something Better{/i}."
+        
+        n "{i}You don't have to be the one to lose/You don't have to be the one to tell a lie{/i}"
+        
+        n "{i}And I don't have to bе the one to take all this/Timе you've wasted being dishonest{/i}"
+        
+        n "When you're ready to be honest with me about what you remember, I'm done with you."
+        
+        show natsumi casual frown
+        
+        n "Goodbye, Jake."
+        
+        hide natsumi casual frown
+        
+        "With those words, Sylvia walks away, leaving you at the garden path to find your own way back."
+        
+        "As you walk away, you mull over what happened. You had known how important you regaining your memory had been to Sylvia, but your white lies that were meant to make her feel better, more confident, only hurt her more."
+        
+        scene bridge
+        
+        "As you cross the bridge leading away from your childhood home, you decide that you need to work on your memory on your own first, then figure out how to make it up to Sylvia."
+        
+        "You have no idea what Raymond finds a couple of days later when he returns to his home."
+        
+        return
+        
+    else:
+        "Sylvia falls silent but doesn't turn to you."
+        
+        n "That's not helping. You haven't remembered anything so far. Why do you think you're going to remember anything at all at any point?"
+        
+        "You try to find an answer to that, but Sylvia doesn't give you enough time."
+        
+         n "I thought so."
+         
+         "You two are silent for a while. Then Sylvia speaks up again."
+         
+         n "I think I'm done trying to force the impossible to happen."
+         
+         "She starts to walk away."
+         
+         y "Where are you going? What are we going to do?!"
+         
+         n "{i}We{/i} are not going to do anything. {i}I{/i} am going home to rethink if I want to have anything to do with you. What {i}you{/i} want to do is up to you."
+         
+         n "Goodbye for now, Jake."
+         
+         "With those words, Sylvia walks away, leaving you at the garden path to find your own way back."
+        
+        "As you walk away, you mull over what happened. You had known how important you regaining your memory had been to Sylvia, so for her to give in to despair and give up on it like that had come as a surprise."
+        
+        "Confused and completely out of your depth, you text Raymond for advice. The retired doctor probably knows your partner well enough to help you with how you should proceed with her."
+        
+        scene bridge
+        
+        "As you cross the bridge leading away from your childhood home, you get a reply back. It says, 'Give her time and space. The years without you have been tough for her. She'll come around.'"
+        
+        "Another text comes a while afterwards, 'In the meantime, if you have the time, stop by once I've come back home. I'll see what I can do to help you regain your memory.'"
+        
+        "You send Raymond a quick 'Thank you' and keep walking. Perhaps there is still hope for you and Silvia."
+        
+        "At least you want to hold onto that hope."
+        
+        return
+    
+label sixguilty:
+    "TODO"
+    
+    return
 
+label sixgood:
+    "TODO"
+        
+        
+    
 
     # This ends the game.
 
