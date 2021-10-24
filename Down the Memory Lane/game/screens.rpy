@@ -375,8 +375,8 @@ screen main_menu():
             text "[config.name!t]":
                 style "main_menu_title"
 
-            text "[config.version]":
-                style "main_menu_version"
+            #text "[config.version]":
+                #style "main_menu_version"
 
 
 style main_menu_frame is empty
@@ -392,11 +392,11 @@ style main_menu_frame:
     background "gui/overlay/main_menu.png"
 
 style main_menu_vbox:
-    xalign 1.0
+    xalign 0.75
     xoffset -30
     xmaximum 1200
-    yalign 1.0
-    yoffset -30
+    yalign 0.02
+    yoffset 0
 
 style main_menu_text:
     properties gui.text_properties("main_menu", accent=True)

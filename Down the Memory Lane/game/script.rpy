@@ -62,7 +62,8 @@ label two:
     
     scene house
     
-    show natsumi casual smile
+    show natsumi casual smile at center:
+        zoom 0.6
     
     n "Here we are!"
     
@@ -90,7 +91,8 @@ label two:
     
 label housetrue:
     
-    show natsumi casual frown
+    show natsumi casual frown at center:
+        zoom 0.6
     
     n "That's too bad. You always missed home when we were away."
     
@@ -103,7 +105,8 @@ label housetrue:
 label houselie:
     $ lied = True
     
-    show natsumi casual open
+    show natsumi casual open at center:
+        zoom 0.6
     
     n "You do?! You remember your family?"
     
@@ -153,7 +156,8 @@ label three:
     
     scene outdoor dining
     
-    show natsumi casual smile
+    show natsumi casual smile at center:
+        zoom 0.6
     
     n "This takes me back. Your parents used to joke that once Julian or Jordan would start dating, they'd have to get more chairs here."
     
@@ -190,7 +194,8 @@ label outdoortruth:
     
     y "I wish I did remember something. I can see that all these memories are do fond to you but I just... I just can't."
     
-    show natsumi casual closed frown
+    show natsumi casual closed frown at center:
+        zoom 0.6
     
     n "..."
     
@@ -209,7 +214,8 @@ label outdoortruth:
 label outdoorlie:
     $ lied = True
     
-    show natsumi casual frown
+    show natsumi casual frown at center:
+        zoom 0.6
     
     n "..."
     
@@ -253,7 +259,8 @@ label four:
     
     scene swing
     
-    show natsumi casual open
+    show natsumi casual open at center:
+        zoom 0.6
     
     n "Wow, it's still like it used to be!"
     
@@ -319,7 +326,8 @@ label five:
     
     scene garden path
     
-    show natsumi casual open
+    show natsumi casual open at center:
+        zoom 0.6
     
     n "I didn't expect Raymond to have developed a green thumb."
     
@@ -413,7 +421,7 @@ label five:
             
 label sixbad:
     
-        y "Hey, calm down. It's not as bad as it looks. I'll remember stuff."
+    y "Hey, calm down. It's not as bad as it looks. I'll remember stuff."
     
     if lied:
 
@@ -439,7 +447,8 @@ label sixbad:
         
         n "When you're ready to be honest with me about what you remember, I'm done with you."
         
-        show natsumi casual frown
+        show natsumi casual frown at center:
+            zoom 0.6
         
         n "Goodbye, Jake."
         
@@ -455,8 +464,6 @@ label sixbad:
         
         "You have no idea what Raymond finds a couple of days later when he returns to his home."
         
-        return
-        
     else:
         "Sylvia falls silent but doesn't turn to you."
         
@@ -464,21 +471,21 @@ label sixbad:
         
         "You try to find an answer to that, but Sylvia doesn't give you enough time."
         
-         n "I thought so."
+        n "I thought so."
          
-         "You two are silent for a while. Then Sylvia speaks up again."
+        "You two are silent for a while. Then Sylvia speaks up again."
          
-         n "I think I'm done trying to force the impossible to happen."
+        n "I think I'm done trying to force the impossible to happen."
          
-         "She starts to walk away."
+        "She starts to walk away."
          
-         y "Where are you going? What are we going to do?!"
+        y "Where are you going? What are we going to do?!"
          
-         n "{i}We{/i} are not going to do anything. {i}I{/i} am going home to rethink if I want to have anything to do with you. What {i}you{/i} want to do is up to you."
+        n "{i}We{/i} are not going to do anything. {i}I{/i} am going home to rethink if I want to have anything to do with you. What {i}you{/i} want to do is up to you."
          
-         n "Goodbye for now, Jake."
+        n "Goodbye for now, Jake."
          
-         "With those words, Sylvia walks away, leaving you at the garden path to find your own way back."
+        "With those words, Sylvia walks away, leaving you at the garden path to find your own way back."
         
         "As you walk away, you mull over what happened. You had known how important you regaining your memory had been to Sylvia, so for her to give in to despair and give up on it like that had come as a surprise."
         
@@ -494,7 +501,7 @@ label sixbad:
         
         "At least you want to hold onto that hope."
         
-        return
+    return
     
 label sixguilty:
     y "I'm sorry that I don't remember anything. I can see that it's important to you."
@@ -513,7 +520,8 @@ label sixguilty2:
     
     scene greenhouse
     
-    show natsumi casual frown
+    show natsumi casual frown at center:
+        zoom 0.6
     
     n "Your parents used to grow vegetables here."
     
@@ -568,9 +576,174 @@ label guiltyend:
     return
 
 label sixgood:
-    "TODO"
+    y "I'm sure I will remember sooner or later. It's just going to take more time than either of us expected."
+    
+    "Silvia stops crying."
+    
+    if lied:
+        n "How can I believe you after you lied about recovering memories earlier?"
         
+        "You look for an answer. Fortunately, she gives you the time you need to find one."
         
+        y "I'm sorry I lied. I know that this is important to you and I... I wanted to give you hope that I can recover my memories. I didn't expect it to backfire like that."
+        
+        n "*sigh*"
+        
+        "Sylvia wipes her tears and turns to face you."
+        
+        show natsumi casual frown at center:
+            zoom 0.6
+        
+        n "Don't do that. Lies never work out in the end, and if I can't trust that you're telling the truth, we won't get anywhere with this. Do you understand that?"
+        
+        "You nod."
+        
+        y "I'm sorry. I meant well, I swear I did."
+        
+        n "I believe you."
+        
+        show natsumi casual smile
+        
+    else:
+        n "Are you... are you sure?"
+        
+        y "Yeah, I am."
+        
+        "Silvia stops crying."
+        
+        n "Okay then. Okay. Everything's gonna be alright, right?"
+        
+        y "Yes. Everything will be alright in time."
+        
+        "Silvia nods a few times, wipes her tears away and turns to you."
+        
+        show natsumi casual smile at center:
+            zoom 0.6
+        
+        n "Yeah, you're right. Thanks, Jake."
+        
+    n "And you did mention that you had a gut feeling about what happened to your brothers. I guess that's something, right?"
+        
+    "You smile. Progress!"
+        
+    y "Yeah. Yeah, it is something. Not much, but it's better than nothing."
+        
+    n "I thought so too."
+        
+    n "Let's continue. The greenhouse is next."
+    
+    jump greenhouse
+    
+label greenhouse:
+    scene greenhouse
+    
+    show natsumi casual smile at center:
+        zoom 0.6
+    
+    n "Your parents used to grow vegetables here. You'd be surprised by just how much they were able to output in one year with just one greenhouse like that."
+    
+    n "If I didn't know any better, I'd think your father was a magician in a gardener's disguise."
+    
+    y "But he was simply that good?"
+    
+    n "Yeah. He was a professional, after all."
+    
+    y "Huh. That's must have come in handy..."
+    
+    n "It did, believe me."
+    
+    y "Is Raymond continuing their work?"
+    
+    n "That, or he's having someone else do it for him. I haven't followed what's been going on here aside from things I had to know about as the owner."
+    
+    y "I see."
+    
+    show natsumi casual frown
+    
+    n "Um..."
+    
+    n "I'm sorry about the outburst earlier. I should've kept my cool better."
+    
+    show natsumi casual closed frown
+    
+    n "And I guess I've been fixating on helping you recover your memories too much when I should've focused more on being grateful that you're here with me again, memories or no memories."
+    
+    y "It's okay. I can only imagine how hard all of this has been for you."
+    
+    show natsumi casual smile
+    
+    n "Thank you, Jake."
+    
+    show natsumi casual closed smile
+    
+    n "I'm glad that you still have that golden heart of yours."
+    
+    show natsumi casual smile
+    
+    n "And even though we haven't gotten much progress today, I am grateful for what we have. We just need to keep going."
+    
+    y "Do you have more to show me?"
+    
+    n "I think we could head back to the house to rest a while before heading out. What do you say?"
+    
+    y "Sounds good to me."
+    
+    n "Let's go then. This way, please."
+    
+    jump goodend
+    
+label goodend:
+    
+    scene bridge
+    
+    "Some time later, you leave your childhood home. There was a lot to unpack and you knew that you were going to need some time to mull over everything you had seen and heard today."
+    
+    "You stop at the bridge. Sylvia leans against the railing and gestures you to do the same. You oblige and look over the river flowing underneath."
+    
+    show natsumi casual smile at center:
+        zoom 0.6
+    
+    n "What a day, huh?"
+    
+    y "Yup. What a day."
+    
+    n "How do you feel?"
+    
+    y "Pretty fine. I've got a lot to think on, though. You?"
+    
+    n "Same. Revisiting this place with you and reminiscing everything..."
+    
+    show natsumi casual frown
+    
+    n "I think I needed all this, even the breakdown I had. It was a reminder that I should be grateful for what I already have even if I very much still do want you to recover your memories."
+    
+    n "I want you to remember what we went through together, no matter what it takes."
+    
+    show natsumi casual closed smile
+    
+    n "There's so much I want to share with you again."
+    
+    show natsumi casual closed smile blush
+    
+    n "And a lot of things I want to experience with you again."
+    
+    y "I want to remember it all too."
+    
+    show natsumi casual smile
+    
+    n "Then let's keep working on it together, shall we?"
+    
+    y "Absolutely."
+    
+    n "Then there's nothing in this universe that's going to stop us from achieving that."
+    
+    hide natsumi casual smile
+    
+    "You leave the bridge and head back to your current home. The work towards recovering your memories had only begun, but you are feeling hopeful."
+    
+    "With Silvia, who had survived so much, by your side, recovering your memories was going to be a success, no matter how much time and effort it would take. You are certain of it that night when you lie down by your partner's side and look into her loving eyes."
+    
+    "Someday, you would remember how it felt to hear her say 'I love you' for the first time ever and more."
     
 
     # This ends the game.
