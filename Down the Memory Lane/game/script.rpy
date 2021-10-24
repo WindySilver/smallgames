@@ -285,7 +285,7 @@ label four:
     
     n "You don't remember, do you?"
     
-    y "No, not really. Are they dead?"
+    y "No, not really, aside from a bad feeling in my gut. Are they... are they dead?"
     
     show natsumi casual closed frown
     
@@ -297,7 +297,7 @@ label four:
     
     "You nod. You don't remember anything, but your gut is telling you that things hit the fan back then."
     
-    "You don't want to think about it. Even without dying and being reborn, you'd had enough of death."
+    "You don't want to think about it. Even without dying and being reborn, you've had enough of death."
     
     n "Have you recovered any memories?"
     
@@ -412,7 +412,11 @@ label five:
             jump sixgood
             
 label sixbad:
+    
+        y "Hey, calm down. It's not as bad as it looks. I'll remember stuff."
+    
     if lied:
+
         "Sylvia turns to you, tears streaming down her face."
         
         n "How can I believe that when you've already lied to me about remembering things?!"
@@ -493,7 +497,73 @@ label sixbad:
         return
     
 label sixguilty:
-    "TODO"
+    y "I'm sorry that I don't remember anything. I can see that it's important to you."
+    
+    "Sylvia falls silent and wipes her tears."
+    
+    n "I'm sorry too. I shouldn't have broken down like that."
+    
+    n "*sigh*"
+    
+    n "Come on, let's head to the greenhouse."
+    
+    jump sixguilty2
+
+label sixguilty2:
+    
+    scene greenhouse
+    
+    show natsumi casual frown
+    
+    n "Your parents used to grow vegetables here."
+    
+    y "It seems that Raymond is continuing their work."
+    
+    n "Yeah, or he's having someone else do it for him."
+    
+    "You're both quiet for a while."
+    
+    y "Are you ok?"
+    
+    n "Not really."
+    
+    show natsumi casual closed frown
+    
+    n "*sigh*"
+    
+    n "I'm sorry about the outburst earlier. I really shouldn't have done that, especially since I should be grateful that you're here with me, memories or no memories."
+    
+    y "It's okay. I can only imagine how hard all of this has been for you."
+    
+    show natsumi casual frown
+    
+    "Sylvia nods."
+    
+    n "Still. I should've kept my cool..."
+    
+    n "*sigh*"
+    
+    n "Could we please call it a day and resume this tour some other day? Maybe talk with Raymond too, if he's here then."
+    
+    n "I'm feeling a bit drained after all that, and I could probably use some time to think by myself about all of this."
+    
+    y "Of course. You only need to ask."
+    
+    show natsumi casual smile
+    
+    n "Thank you, Jake. It's good to see that that golden heart of yours is still there."
+    
+    jump guiltyend
+    
+label guiltyend:
+    
+    scene bridge
+    
+    "You leave your childhood home mostly in silence. You both have a lot to unpack, and you'd be lying if you said that you didn't need some time to think and unwind too."
+    
+    "You and Silvia promise to meet at work the following day and talk more then."
+    
+    "Even though you didn't recover memories, you figure that the tour was worth the effort. Perhaps now that the toughest part was over, you'll begin to recover your memories..."
     
     return
 
