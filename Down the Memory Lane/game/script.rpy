@@ -17,7 +17,7 @@ label start:
     # add a file (named either "bg room.png" or "bg room.jpg") to the
     # images directory to show it.
 
-    scene entrance path
+    scene entrance path with dissolve
 
     # This shows a character sprite. A placeholder is used, but you can
     # replace it by adding a file named "eileen happy.png" to the images
@@ -27,6 +27,10 @@ label start:
         zoom 0.6
 
     # These display lines of dialogue.
+    
+    #PLAY Friday Afternoon or New Road
+    
+    play music "New Road Loop.ogg"
 
     n "We're almost there. Just through this path and it should be within our sights."
 
@@ -42,7 +46,7 @@ label start:
     
     "Well, logic and the fact that it was quite literally a lifetime ago for you."
     
-    "What a weird world."
+    "What a strange world."
     
     n "Does this place look familiar to you, Jake?"
     
@@ -55,12 +59,17 @@ label start:
     n "But I'm sure that once we get to the house, you'll start to remember! You'll see."
     
     "You wish you were as hopeful as her."
+    
+    stop music fadeout 1.0
 
     jump two
     
 label two:
     
-    scene house
+    scene house with dissolve
+    
+    #PLAY Friday Afternoon
+    play music "Friday Afternoon Loop.ogg"
     
     show natsumi casual smile at center:
         zoom 0.6
@@ -93,6 +102,8 @@ label housetrue:
     
     show natsumi casual frown at center:
         zoom 0.6
+        
+    y "Just the photos."
     
     n "That's too bad. You always missed home when we were away."
     
@@ -108,9 +119,13 @@ label houselie:
     show natsumi casual open at center:
         zoom 0.6
     
+    y"Yes. I... I remember living here with my parents."
+    
     n "You do?! You remember your family?"
     
     y "Yeah. It... It's starting to come back to me."
+    
+    show natsumi casual smile
     
     n "That's wonderful! Tell me about them!"
     
@@ -136,6 +151,8 @@ label houselie:
     
     y "Is... is something wrong?"
     
+    stop music fadeout 1.0
+    
     n "You don't have an older brother. And none of you three look inherited both your mother's hair and eyes."
     
     "{i}Oops.{/i}"
@@ -148,13 +165,17 @@ label houselie:
     
     show natsumi casual smile
     
+    play music "Friday Afternoon Loop.ogg"
+    
     n "There's a lot I want to show you."
     
     jump three
     
 label three:
     
-    scene outdoor dining
+    scene outdoor dining with dissolve
+    
+    #play music "Friday Afternoon Loop.ogg" #OR MAYBE SOMETHING ELSE
     
     show natsumi casual smile at center:
         zoom 0.6
@@ -203,7 +224,7 @@ label outdoortruth:
     
     n "We'll just keep trying. I'm not going to give up on you."
     
-    show natsumi casual open
+    show natsumi casual smile
     
     n "If I didn't give up on you before — even if you don't remember it — I'm definitely not going to give up on you now."
     
@@ -214,14 +235,20 @@ label outdoortruth:
 label outdoorlie:
     $ lied = True
     
+    y "You were so beautiful back then, too."
+    
     show natsumi casual frown at center:
         zoom 0.6
     
     n "..."
     
+    stop music fadeout 1.0
+    
     n "You don't mean that."
     
     y "Huh?"
+    
+    play music "Try and Solve This Loop.ogg" volume 0.6
     
     n "I wasn't beautiful back then, and you were quick to note that. I was plain and rather inelegant. You told me as much."
     
@@ -235,13 +262,13 @@ label outdoorlie:
     
     n "Heh..."
     
-    n "You always were such a melodramatic ass. You just grew a brain-to-mouth filter along the way."
+    n "You were always such a melodramatic ass. You just grew a brain-to-mouth filter along the way."
     
-    y "Okay, I didn't expect to hear that."
+    y "Okay, I did not expect to hear that."
     
     show natsumi casual smile
     
-    n "I may or may not have reserved the exclusive right to call you that. After all, you're {i}my{/i} melodramatic ass."
+    n "I may or may not have reserved the exclusive right to call you that. After all, you are {i}my{/i} melodramatic ass."
     
     n "Come on, let's head to the swings."
     
@@ -249,15 +276,21 @@ label outdoorlie:
     
     n "Just please don't lie to me again."
     
-    y "Okay. I... I'm sorry."
+    y "Okay. I-I'm sorry."
+    
+    stop music fadeout 1.5
     
     "{i}Oops.{/i}"
+    
+    play music "Friday Afternoon Loop.ogg" fadein 1.0
     
     jump four
     
 label four:
     
-    scene swing
+    scene swing with dissolve
+    
+    #play music "Friday Afternoon Loop.ogg" #OR MAYBE SOMETHING ELSE
     
     show natsumi casual open at center:
         zoom 0.6
@@ -274,7 +307,7 @@ label four:
     
     show natsumi casual closed smile
     
-    n "Haha, I wouldn't put it past him to do that."
+    n "Heh, I wouldn't put it past him to do that."
     
     show natsumi casual frown
     
@@ -282,7 +315,13 @@ label four:
     
     n "You meant the whole world to them."
     
+    stop music fadeout 1.5
+    
     y "..."
+    
+    play music "Purple Black Loop.ogg" fadein 3.0 volume 0.4
+    
+    #MAYBE SWITCH TO SOMETHING MORE DRAMATIC, MAYBE PURPLE BLACK ON A LOW VOLUME IF IT'S NOT USED ELSEWHRE
     
     "A clench in your stomach tells you that you don't want to think about your brothers."
     
@@ -296,11 +335,13 @@ label four:
     
     show natsumi casual closed frown
     
-    n "...Yes."
+    n "..."
+    
+    n "Yes."
     
     show natsumi casual frown
     
-    n "They died before you. I never got the details but... it seemed that things went really bad out there."
+    n "They died long before you did. I never got the details — you never told what exactly happened — but... it seemed that things turned out really bad out there."
     
     "You nod. You don't remember anything, but your gut is telling you that things hit the fan back then."
     
@@ -318,18 +359,24 @@ label four:
     
     n "Well, let's finish the tour anyway. Even if you don't remember anything today, all this might stir something and you'll recover memories later on."
     
+    stop music fadeout 4.0
+    
     n "At least that's what I hope will happen."
     
     jump five
     
 label five:
     
-    scene garden path
+    scene garden path with dissolve
+    
+    play music "Friday Afternoon Loop.ogg" #OR MAYBE SOMETHING ELSE
     
     show natsumi casual open at center:
         zoom 0.6
     
-    n "I didn't expect Raymond to have developed a green thumb."
+    n "Wow, it's still just like it used to be!"
+    
+    n "I didn't expect Raymond to have developed a green thumb of any sort."
     
     y "Raymond?"
     
@@ -343,29 +390,41 @@ label five:
     
     show natsumi casual smile
     
-    n "Although he certainly had his way with hatchets too. Never get between Raymond and his hatchet."
+    n "Although he certainly has his way with hatchets too. Never get between Raymond and his hatchet."
+    
+    y "Heh, I'll keep that in mind."
     
     y "So, who owns this place?"
     
     show natsumi casual frown
     
-    n "I inherited it after you passed away."
+    n "I inherited it when you died."
     
-    n "Although, I've had friends and family keep the place in an order. Then Raymond retired and I asked if he wanted to move in here to have something to do with his time and he said yes."
+    n "Although, I've had friends and family keep the place in an order. I... didn't want to return here after the paperwork was done, so I delegated the work to people I trust. Those who wanted to stay here took turns."
+    
+    n "Then Raymond retired and I asked if he wanted to move in here to have something to do with his newfound free time and he said yes, especially since I didn't ask for rent."
     
     y "Huh. I haven't seen him here, though. Is he not here?"
     
     n "Not today. He's out visiting family."
 
-    n "He also figured that it'd be for the best to give us some privacy, especially since I haven't visited here for a while either."
+    n "He also figured that it'd be for the best to give us some privacy, especially since I haven't been here in such a long time either."
     
     show natsumi casual closed frown
+    
+    stop music fadeout 1.5
+    
+    n "..."
 
     y "Is something wrong?"
     
     n "*sigh*"
     
     show natsumi casual frown
+    
+    play music "Pink Blue loop Loop.ogg" fadein 2.0
+    
+    #PLAY Pink Blue loop or Purple Black loop
     
     n "I'm just frustrated. I'd hoped that you'd recover at least a little bit of your memories. We spent so much time here growing up."
     
@@ -375,31 +434,33 @@ label five:
     
     hide natsumi casual closed frown
     
-    "Sylvia turns away from you. Her whole body trembles and you can hear her voice shake from the dammed tears."
+    "Sylvia turns away from you. Her body trembles and you can hear her voice shake from the dammed tears."
     
-    n "There was nothing I could do except smile for you since you asked me to and say whatever I needed to say before you were gone forever. And I... I'm not entirely sure about what happened after you... you were gone."
+    n "There was nothing I could do except smile for you since you asked me to and say whatever I needed to say before you were gone forever. And I... I'm not entirely sure about what happened after you... after you..."
     
-    n "What the others told... they said that I snapped in some way. And after it was all over, I got a PTSD diagnosis and sick time whatnot... And all I remember is that it hurt {i}so fucking much{/i}."
+    n "...After you passed away right there and then, on that damn battlefield."
     
-    n "I thought you were gone forever and acted that according to that. I moved away from our quarters because I couldn't stand being there alone and took over your old ones, the ones you never wanted to use."
+    n "What the others told... they said that I snapped in some way. And after it was all over, I got a PTSD diagnosis and sick time and whatnot... But all I remember is that it hurt {i}so fucking much{/i}."
+    
+    n "I thought you were gone forever and acted accordingly. I moved out of our quarters because I couldn't stand being there alone and took over your old quarters which you'd been using as a storage space."
     
     n "You know how I turned out. I don't know how I made it, aside from everyone's immense support and all the counseling."
     
     n "I never even thought of having another partner, not after everything we went through together. No one could ever measure up to you, you know?"
     
-    n "And then you suddenly came back to life. You just... reappeared into our world, without a memory. But it was still you."
+    n "And then you suddenly came back to life. You just... reappeared into our world, without a memory. But it was still you. Jake, my partner whom I thought I'd lost for good."
     
     y "I remember that. You almost crushed me with that bear hug."
     
     "Sylvia lets out a broken laugh. You are almost certain that she is either on the verge of tears or already crying."
     
-    n "I was convinced that if I let go of you, you'd disappear again."
+    n "I was convinced that if I let go of you, you'd disappear again. That I'd be all alone again in this world even though even then I was surrounded by people I'd worked with for most of my life."
     
-    n "And when you didn't..."
+    n "And when you didn't disappear..."
     
     n "It was the happiest day of my life."
     
-    n "I'd gotten my partner back somehow. The love of my life, my other half, the one I'd missed more than anyone else ever. By the will of whatever higher powers, you'd returned to life."
+    n "I'd gotten my partner back somehow. The love of my life, my other half, the one I'd missed more than anyone else ever. By the will of powers that govern over life and death, you'd returned to life."
     
     n "And I still am happy that you're with me again, don't get me wrong. But there's so much we experienced together that you don't remember and it... it hurts a lot, too."
     
@@ -407,7 +468,7 @@ label five:
     
     "Sylvia turns to the sky."
     
-    n "IT'S NOT FAIR, YOU HEAR?!"
+    n "{b}{i}IT'S NOT FAIR, YOU HEAR?!{/i}{/b}"
     
     "Sylvia breaks into tears. You look for words that might appease her. You need to get her to calm down somehow."
     
@@ -427,15 +488,20 @@ label sixbad:
 
         "Sylvia turns to you, tears streaming down her face."
         
+        show natsumi casual frown at center:
+            zoom 0.6
+        
         n "How can I believe that when you've already lied to me about remembering things?!"
         
         "You have no answer to that."
         
-        "Sylvia wiped her tears away, still looking angry."
+        "Sylvia wipes her tears away, still looking angry."
         
         n "I thought so."
         
-        "She turns away."
+        hide natsumi casual frown
+        
+        "Sylvia turns away."
         
         n "You're not the Jake I knew. You're a liar and I'm done."
         
@@ -445,20 +511,23 @@ label sixbad:
         
         n "{i}And I don't have to bе the one to take all this/Timе you've wasted being dishonest{/i}"
         
-        n "When you're ready to be honest with me about what you remember, I'm done with you."
+        n "Until you're ready to be honest with me about what you remember, I'm done with you."
         
-        show natsumi casual frown at center:
-            zoom 0.6
+        stop music fadeout 3.0
         
         n "Goodbye, Jake."
         
         hide natsumi casual frown
         
+        play music "Little Apprentice Loop.ogg" fadein 3.0
+        
+        #END TRACK HERE, CHANGE TO Little Apprentice
+        
         "With those words, Sylvia walks away, leaving you at the garden path to find your own way back."
         
-        "As you walk away, you mull over what happened. You had known how important you regaining your memory had been to Sylvia, but your white lies that were meant to make her feel better, more confident, only hurt her more."
+        "As you walk away, you mull over what happened. You had known how important you regaining your memory had been to Sylvia, but your white lies that were meant to make her feel better, more confident, only hurt her."
         
-        scene bridge
+        scene bridge with dissolve
         
         "As you cross the bridge leading away from your childhood home, you decide that you need to work on your memory on your own first, then figure out how to make it up to Sylvia."
         
@@ -481,9 +550,15 @@ label sixbad:
          
         y "Where are you going? What are we going to do?!"
          
-        n "{i}We{/i} are not going to do anything. {i}I{/i} am going home to rethink if I want to have anything to do with you. What {i}you{/i} want to do is up to you."
+        n "{i}We{/i} are not going to do anything. {i}I{/i} am going home to rethink if I want to have anything to do with you. What {i}you{/i} are going to do is up to you."
+        
+        stop music fadeout 3.0
          
         n "Goodbye for now, Jake."
+        
+        play music "Little Apprentice Loop.ogg" fadein 3.0
+        
+        #END TRACK HERE, CHANGE TO Little Apprentice
          
         "With those words, Sylvia walks away, leaving you at the garden path to find your own way back."
         
@@ -491,13 +566,13 @@ label sixbad:
         
         "Confused and completely out of your depth, you text Raymond for advice. The retired doctor probably knows your partner well enough to help you with how you should proceed with her."
         
-        scene bridge
+        scene bridge with dissolve
         
         "As you cross the bridge leading away from your childhood home, you get a reply back. It says, 'Give her time and space. The years without you have been tough for her. She'll come around.'"
         
         "Another text comes a while afterwards, 'In the meantime, if you have the time, stop by once I've come back home. I'll see what I can do to help you regain your memory.'"
         
-        "You send Raymond a quick 'Thank you' and keep walking. Perhaps there is still hope for you and Silvia."
+        "You send Raymond a quick 'Thank you' and keep walking. Perhaps there is still hope for you and Sylvia."
         
         "At least you want to hold onto that hope."
         
@@ -507,6 +582,8 @@ label sixguilty:
     y "I'm sorry that I don't remember anything. I can see that it's important to you."
     
     "Sylvia falls silent and wipes her tears."
+    
+    stop music fadeout 4.0
     
     n "I'm sorry too. I shouldn't have broken down like that."
     
@@ -518,7 +595,10 @@ label sixguilty:
 
 label sixguilty2:
     
-    scene greenhouse
+    scene greenhouse with dissolve
+    
+    play music "Friday Afternoon Loop.ogg" volume 0.7 #PLACEHOLDER
+    #PLAY SOME SAD MUSIC HERE?
     
     show natsumi casual frown at center:
         zoom 0.6
@@ -529,7 +609,13 @@ label sixguilty2:
     
     n "Yeah, or he's having someone else do it for him."
     
+    stop music fadeout 2.0
+    
     "You're both quiet for a while."
+    
+    play music "Try and Solve This Loop.ogg" fadein 1.0
+    
+    #FADEIN Try and Solve This
     
     y "Are you ok?"
     
@@ -565,11 +651,11 @@ label sixguilty2:
     
 label guiltyend:
     
-    scene bridge
+    scene bridge with dissolve
     
     "You leave your childhood home mostly in silence. You both have a lot to unpack, and you'd be lying if you said that you didn't need some time to think and unwind too."
     
-    "You and Silvia promise to meet at work the following day and talk more then."
+    "You and Sylvia promise to meet at work the following day and talk more then."
     
     "Even though you didn't recover memories, you figure that the tour was worth the effort. Perhaps now that the toughest part was over, you'll begin to recover your memories..."
     
@@ -578,12 +664,10 @@ label guiltyend:
 label sixgood:
     y "I'm sure I will remember sooner or later. It's just going to take more time than either of us expected."
     
-    "Silvia stops crying."
-    
     if lied:
         n "How can I believe you after you lied about recovering memories earlier?"
         
-        "You look for an answer. Fortunately, she gives you the time you need to find one."
+        "You look for an answer. Fortunately, she gives you the time you need to find one while she apparently forces herself to stop crying."
         
         y "I'm sorry I lied. I know that this is important to you and I... I wanted to give you hope that I can recover my memories. I didn't expect it to backfire like that."
         
@@ -600,28 +684,37 @@ label sixgood:
         
         y "I'm sorry. I meant well, I swear I did."
         
+        stop music fadeout 3.0
+        
         n "I believe you."
         
         show natsumi casual smile
+        #END TRACK HERE
         
     else:
         n "Are you... are you sure?"
         
         y "Yeah, I am."
         
-        "Silvia stops crying."
+        stop music fadeout 2.5
+        
+        "Sylvia stops crying."
+        
+        #END TRACK HERE
         
         n "Okay then. Okay. Everything's gonna be alright, right?"
         
         y "Yes. Everything will be alright in time."
         
-        "Silvia nods a few times, wipes her tears away and turns to you."
+        "Sylvia nods a few times, wipes her tears away and turns to you."
         
         show natsumi casual smile at center:
             zoom 0.6
         
         n "Yeah, you're right. Thanks, Jake."
-        
+    
+    play music "Monday Morning Loop.ogg" volume 0.5 fadein 1.5
+    
     n "And you did mention that you had a gut feeling about what happened to your brothers. I guess that's something, right?"
         
     "You smile. Progress!"
@@ -629,13 +722,16 @@ label sixgood:
     y "Yeah. Yeah, it is something. Not much, but it's better than nothing."
         
     n "I thought so too."
-        
+    
+    stop music fadeout 4.0
     n "Let's continue. The greenhouse is next."
     
     jump greenhouse
     
 label greenhouse:
-    scene greenhouse
+    scene greenhouse with dissolve
+    
+    play music "Friday Afternoon Loop.ogg" #OR SOMETHING ELSE?!
     
     show natsumi casual smile at center:
         zoom 0.6
@@ -694,11 +790,16 @@ label greenhouse:
     
 label goodend:
     
-    scene bridge
+    scene bridge with dissolve
     
-    "Some time later, you leave your childhood home. There was a lot to unpack and you knew that you were going to need some time to mull over everything you had seen and heard today."
+    "Some time later, you leave your childhood home. There is a lot to unpack and you know that you are going to need some time to mull over everything you have seen and heard today."
+    
+    stop music fadeout 5.0
     
     "You stop at the bridge. Sylvia leans against the railing and gestures you to do the same. You oblige and look over the river flowing underneath."
+    
+    play music "Quantum Loop.ogg" fadein 15.0
+    #PLAY Monday Morning?
     
     show natsumi casual smile at center:
         zoom 0.6
@@ -709,13 +810,13 @@ label goodend:
     
     n "How do you feel?"
     
-    y "Pretty fine. I've got a lot to think on, though. You?"
+    y "Pretty fine. I've got a lot to think about, though. You?"
     
     n "Same. Revisiting this place with you and reminiscing everything..."
     
     show natsumi casual frown
     
-    n "I think I needed all this, even the breakdown I had. It was a reminder that I should be grateful for what I already have even if I very much still do want you to recover your memories."
+    n "I think I needed all this, even the breakdown I had. It was a reminder that I should be grateful for what I already have even though I very much still do want you to recover your memories."
     
     n "I want you to remember what we went through together, no matter what it takes."
     
@@ -735,15 +836,27 @@ label goodend:
     
     y "Absolutely."
     
+    #stop music fadeout 7.0
+    
     n "Then there's nothing in this universe that's going to stop us from achieving that."
     
     hide natsumi casual smile
     
-    "You leave the bridge and head back to your current home. The work towards recovering your memories had only begun, but you are feeling hopeful."
+    #play music "Quantum Loop.ogg" fadein 1.0
     
-    "With Silvia, who had survived so much, by your side, recovering your memories was going to be a success, no matter how much time and effort it would take. You are certain of it that night when you lie down by your partner's side and look into her loving eyes."
+    #Quantum might fit here?
+    
+    "You leave the bridge and head back to your current home. The work towards recovering your memories has only begun, but you are feeling hopeful."
+    
+    "With Sylvia, who has survived so much, by your side, recovering your memories is going to be a success, no matter how much time and effort it would take."
+    
+    scene black with fade
+    
+    "You are certain of it that night when you lie down by your partner's side and look into her loving eyes."
     
     "Someday, you would remember how it felt to hear her say 'I love you' for the first time ever and more."
+    
+    "You cannot wait for that day."
     
 
     # This ends the game.

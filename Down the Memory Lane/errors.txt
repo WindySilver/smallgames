@@ -2,17 +2,10 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 451: expected statement.
-    zoom 0.6
-          ^
-
-File "game/script.rpy", line 595: expected statement.
-    zoom 0.6
-          ^
-
-File "game/script.rpy", line 621: expected statement.
-    zoom 0.6
-          ^
+File "game/options.rpy", line 208: invalid syntax
+    define build.itch_project = "windysilver/down-the-memory-lane"
+                ^
+    
 
 Ren'Py Version: Ren'Py 7.4.8.1895
-Sun Oct 24 23:58:20 2021
+Mon Oct 25 15:22:29 2021

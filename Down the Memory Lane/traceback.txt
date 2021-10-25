@@ -1,56 +1,46 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
-After initialization, but before game start.
-  File "game/screens.rpy", line 546, in prepare_screen
-    screen about():
-  File "game/screens.rpy", line 546, in prepare
-    screen about():
-  File "game/screens.rpy", line 553, in prepare
-    use game_menu(_("About"), scroll="viewport"):
-  File "game/screens.rpy", line 553, in prepare
-    use game_menu(_("About"), scroll="viewport"):
-  File "game/screens.rpy", line 557, in prepare
-    vbox:
-  File "game/screens.rpy", line 557, in prepare
-    vbox:
-  File "game/screens.rpy", line 566, in prepare
-    text _("The backgrounds are by {a=https://florassence.itch.io/garden-backgrounds}Florassence{/a}, distributed under a Creative Commons licence.
-SyntaxError: EOL while scanning string literal (screens.rpy, line 566)
+While running game code:
+  File "game/script.rpy", line 253, in script
+    n "I wasn't beautiful back then, and you were quick to note that. I was plain and rather inelegant. You told me as much."
+IOError: Couldn't find file 'Try and Solve This.ogg'.
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "/home/noora/Lataukset/renpy-7.4.8-sdk/renpy/bootstrap.py", line 326, in bootstrap
-    renpy.main.main()
-  File "/home/noora/Lataukset/renpy-7.4.8-sdk/renpy/main.py", line 617, in main
-    run(restart)
-  File "/home/noora/Lataukset/renpy-7.4.8-sdk/renpy/main.py", line 97, in run
-    renpy.display.screen.prepare_screens()
-  File "/home/noora/Lataukset/renpy-7.4.8-sdk/renpy/display/screen.py", line 939, in prepare_screens
-    s.ast.prepare_screen()
-  File "game/screens.rpy", line 546, in prepare_screen
-    screen about():
-  File "game/screens.rpy", line 546, in prepare
-    screen about():
-  File "game/screens.rpy", line 553, in prepare
-    use game_menu(_("About"), scroll="viewport"):
-  File "game/screens.rpy", line 553, in prepare
-    use game_menu(_("About"), scroll="viewport"):
-  File "game/screens.rpy", line 557, in prepare
-    vbox:
-  File "game/screens.rpy", line 557, in prepare
-    vbox:
-  File "game/screens.rpy", line 566, in prepare
-    text _("The backgrounds are by {a=https://florassence.itch.io/garden-backgrounds}Florassence{/a}, distributed under a Creative Commons licence.
-  File "/home/noora/Lataukset/renpy-7.4.8-sdk/renpy/pyanalysis.py", line 712, in ast_eval
-    return self.ast_eval_literal(expr)[0]
-  File "/home/noora/Lataukset/renpy-7.4.8-sdk/renpy/pyanalysis.py", line 696, in ast_eval_literal
-    expr = py_compile(expr, 'eval', ast_node=True)
-  File "/home/noora/Lataukset/renpy-7.4.8-sdk/renpy/python.py", line 835, in py_compile
-    raise e
-SyntaxError: EOL while scanning string literal (screens.rpy, line 566)
+  File "game/script.rpy", line 253, in script
+    n "I wasn't beautiful back then, and you were quick to note that. I was plain and rather inelegant. You told me as much."
+  File "/home/noora/Lataukset/renpy-7.4.8-sdk/renpy/ast.py", line 716, in execute
+    renpy.exports.say(who, what, *args, **kwargs)
+  File "/home/noora/Lataukset/renpy-7.4.8-sdk/renpy/exports.py", line 1417, in say
+    who(what, *args, **kwargs)
+  File "/home/noora/Lataukset/renpy-7.4.8-sdk/renpy/character.py", line 1223, in __call__
+    self.do_display(who, what, cb_args=self.cb_args, dtt=dtt, **display_args)
+  File "/home/noora/Lataukset/renpy-7.4.8-sdk/renpy/character.py", line 875, in do_display
+    **display_args)
+  File "/home/noora/Lataukset/renpy-7.4.8-sdk/renpy/character.py", line 621, in display_say
+    rv = renpy.ui.interact(mouse='say', type=type, roll_forward=roll_forward)
+  File "/home/noora/Lataukset/renpy-7.4.8-sdk/renpy/ui.py", line 298, in interact
+    rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
+  File "/home/noora/Lataukset/renpy-7.4.8-sdk/renpy/display/core.py", line 3276, in interact
+    repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, pause=pause, pause_start=pause_start, **kwargs)
+  File "/home/noora/Lataukset/renpy-7.4.8-sdk/renpy/display/core.py", line 3979, in interact_core
+    renpy.audio.audio.periodic()
+  File "/home/noora/Lataukset/renpy-7.4.8-sdk/renpy/audio/audio.py", line 1138, in periodic
+    raise_(exc[0], exc[1], exc[2])
+  File "/home/noora/Lataukset/renpy-7.4.8-sdk/renpy/audio/audio.py", line 1116, in periodic_thread_main
+    periodic_pass()
+  File "/home/noora/Lataukset/renpy-7.4.8-sdk/renpy/audio/audio.py", line 1058, in periodic_pass
+    c.periodic()
+  File "/home/noora/Lataukset/renpy-7.4.8-sdk/renpy/audio/audio.py", line 512, in periodic
+    topf = load(filename)
+  File "/home/noora/Lataukset/renpy-7.4.8-sdk/renpy/audio/audio.py", line 69, in load
+    rv = renpy.loader.load(fn)
+  File "/home/noora/Lataukset/renpy-7.4.8-sdk/renpy/loader.py", line 798, in load
+    raise IOError("Couldn't find file '%s'." % name)
+IOError: Couldn't find file 'Try and Solve This.ogg'.
 
 Linux-5.11.0-38-generic-x86_64-with-debian-bullseye-sid
 Ren'Py 7.4.8.1895
-GardenProject 1.0
-Sat Oct 23 22:08:26 2021
+Down the Memory Lane 1.0
+Mon Oct 25 13:58:48 2021

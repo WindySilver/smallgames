@@ -563,7 +563,7 @@ screen about():
             if gui.about:
                 text "[gui.about!t]\n"
 
-            text _("The backgrounds are by {a=https://florassence.itch.io/garden-backgrounds}Florassence{/a}, distributed under a Creative Commons licence.\n\nThe sprite is by {a=https://noranekogames.itch.io/natsumi}Noraneko Games{/a}\n\nMade with {a=https://www.renpy.org/}Ren'Py{/a} [renpy.version_only].\n\n[renpy.license!t]")
+            text _("The backgrounds are by {a=https://florassence.itch.io/garden-backgrounds}Florassence{/a} under a Creative Commons License.\n\nThe sprite is by {a=https://noranekogames.itch.io/natsumi}Noraneko Games{/a}.\n\n{a=https://timbeek.itch.io/royalty-free-music-pack}Music{/a} by timbeek.com.\n\nMade with {a=https://www.renpy.org/}Ren'Py{/a} [renpy.version_only].\n\n[renpy.license!t]")
 
 
 style about_label is gui_label
